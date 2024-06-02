@@ -9,7 +9,7 @@ class ListarNoticiasEditaveis extends Component
 {
     public function render()
     {
-        $noticias = Noticia::orderBy('created_at', 'desc')->paginate(6);
+        $noticias = Noticia::with('user')->orderBy('created_at', 'desc')->paginate(6);
 
         return view('livewire.listarNoticiasEditaveis', [
             'noticias' => $noticias

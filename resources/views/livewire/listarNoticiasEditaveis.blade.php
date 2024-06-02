@@ -15,7 +15,7 @@
                         <button class="px-4 py-2 bg-blue-500  rounded hover:bg-blue-600 mr-2"
                             wire:click="editar({{ $noticia->id }})">Editar</button>
                         <button class="px-4 py-2 bg-red-500"
-                            wire:click="excluir({{ $noticia->id }})">Excluir</button>
+                            wire:click="excluir({{ $noticia->id }})">Exddcluir</button>
                     </div>
                 </div>
             </div>

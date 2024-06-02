@@ -7,9 +7,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            {{-- <form> --}}
             <form class="post" action="{{ route('update_noticia', ['id' => $noticia->id]) }}" method="post" wire:submit.prevent="update">
-                @csrf <!-- Adicione o token CSRF para proteção contra CSRF -->
+                @csrf
                 <div>
                     <label for="title" class="block font-medium text-sm text-gray-700">Título</label>
                     <input wire:model="title" id="title" name="title" type="text" value="{{ $noticia->title }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
