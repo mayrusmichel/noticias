@@ -27,7 +27,7 @@ class PublicarController extends Controller
 
         $imagePath = null;
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->storePublicly('images', 'public');
+            $imagePath = $request->file('image')->store('images', 'public');
         }
 
         $noticia = Noticia::create([
