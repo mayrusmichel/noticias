@@ -48,7 +48,6 @@
     @endforeach
 
     <div class="mt-4 flex justify-end">
-        <!-- Verifica se $noticias está definido antes de chamar o método links() -->
         @if(!empty($noticias))
             {{ $noticias->links() }}
         @endif
