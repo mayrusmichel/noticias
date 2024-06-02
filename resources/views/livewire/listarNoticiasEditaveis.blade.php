@@ -1,16 +1,17 @@
 <div>
     <div class="mb-4 flex justify-between items-center">
-        <div>
-            <input type="text" wire:model="search" placeholder="Buscar título da notícia" class="border border-gray-300 p-2 rounded-md">
+        <div class="flex w-3/4">
+            <input type="text" wire:model="search" placeholder="Buscar título da notícia" class="w-full border border-gray-300 p-2 rounded-md">
         </div>
-        <div class="flex">
-            <button wire:click="buscar" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md mr-2">Buscar</button>
-            <button wire:click="limparBusca" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded-md">Limpar</button>
+        <div class="flex w-1/4 justify-end">
+            <button wire:click="buscar" class="bg-blue-500 text-white text-xs py-1 px-4 rounded-md mr-2">Buscar</button>
+            <button wire:click="limparBusca" class="bg-red-500 text-white text-xs py-1 px-4 rounded-md">Limpar</button>
         </div>
     </div>
 
+
+
     @php
-        // Verifica se $noticias está definido e não está vazio antes de dividir em grupos
         $gruposNoticias = !empty($noticias) ? $noticias->chunk(3) : [];
     @endphp
 
@@ -28,9 +29,9 @@
                             <p class="text-gray-500 text-xs"> Autor: {{ $noticia->user->name }}</p>
                         </div>
                         <div class="flex justify-between">
-                            <button wire:click="editar({{ $noticia->id }})" class="px-4 py-1 text-xs bg-blue-500 rounded hover:bg-blue-600 mr-2">Editar</button>
+                            <button wire:click="editar({{ $noticia->id }})" class="px-4 py-1 text-white text-xs bg-blue-500 rounded hover:bg-blue-600 mr-2">Editar</button>
                             <button wire:click="excluir({{ $noticia->id }})" wire:loading.attr="disabled" wire:target="excluir({{ $noticia->id }})"
-                                id="excluirBtn{{ $noticia->id }}" class="px-4 text-xs py-1 rounded bg-red-500"
+                                id="excluirBtn{{ $noticia->id }}" class="px-4 text-xs py-1 text-white rounded bg-red-500"
                                ({{ $noticia->id }})">Excluir
                                 <span wire:loading wire:target="excluir({{ $noticia->id }})">
                                     <svg class="animate-spin h-5 w-5 mr-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
