@@ -33,7 +33,7 @@ class ListarNoticiasEditaveis extends Component
 
     public function editar($id)
     {
-        return redirect()->route('editar_noticia', ['id' => $id]);
+        return redirect()->route('editar-noticia', ['id' => $id]);
     }
 
     public function excluir($id)
