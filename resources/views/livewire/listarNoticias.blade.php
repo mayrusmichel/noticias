@@ -12,7 +12,7 @@
                 <p style="color: #4b5563; font-size: 0.875rem; margin-bottom: 1rem;">{{ $noticia->description }}</p>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                     <p style="color: #6b7280; font-size: 0.75rem;">{{ $noticia->created_at->format('d/m/Y') }}</p>
-                    <p style="color: #6b7280; font-size: 0.75rem;">User ID: {{ $noticia->user_id }}</p>
+                    <p style="color: #6b7280; font-size: 0.75rem;"> Autor: {{ $noticia->user->name }}</p>
                 </div>
             </div>
         </div>

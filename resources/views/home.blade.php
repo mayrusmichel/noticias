@@ -32,7 +32,7 @@
         @endif
 
 
-            <div class="max-w-7xl ">
+            <div class="max-w-7xl p-6 ">
                 <div class="flex justify-start p-0 m-0">
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                     width="160px" height="160px" viewBox="0 0 667.000000 286.000000"
@@ -118,10 +118,10 @@
 
                 </div>
 
-                <div class="mt-16">
-
+                <div class="mt-16" style="width: 75%; margin: 0 auto;">
                     @livewire('listar-noticias')
                 </div>
+
 
 
             </div>
