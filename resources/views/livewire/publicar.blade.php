@@ -10,6 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="max-w-xl mx-auto">
+                        <img id="preview-image" src="#" alt="Imagem de visualização" class="rounded mb-4" style="display: none;">
+
                         <form class="post" action="{{ route('publish') }}" method="post" wire:submit.prevent="save" enctype="multipart/form-data">
                             @csrf <!-- Adicione o token CSRF para proteção contra CSRF -->
                             <div class="mb-4">
@@ -27,7 +29,7 @@
                             <div class="mb-4">
                                 <div class="mb-4">
                                     <span class="mr-2">Selecione uma imagem</span>
-                                    <input type="file" name="image" id="image" class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full">
+                                    <input type="file" name="image" id="image" class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full" onchange="previewImage(event)">
                                     <p class="text-xs text-gray-500">PNG, JPG, GIF até 10MB</p>
                                 </div>
                                 @error('image')
@@ -49,20 +51,20 @@
     </div>
 </x-app-layout>
 
-@push('scripts')
+
 <script>
-    document.getElementById('image').addEventListener('change', function(event) {
-        event.preventDefault();
-
-        var file = this.files[0];
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-            document.getElementById('image-preview').src = e.target.result;
-            document.getElementById('image-preview').classList.remove('hidden');
-        };
-
-        reader.readAsDataURL(file);
-    });
+    function previewImage(event) {
+        var input = event.target;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('preview-image');
+                output.src = reader.result;
+                output.style.display = 'block'; // Exibe a imagem de visualização
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
-@endpush
+
+
