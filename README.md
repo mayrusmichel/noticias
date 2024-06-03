@@ -28,7 +28,7 @@
         </li>
         <li>
             <h2>Acesso ao Projeto:</h2>
-            <p>Após iniciar o servidor, acesse o projeto em seu navegador através do seguinte URL:</p>
+            <p>Após iniciar o servidor, acesse o projeto em seu navegador através do seguinte URL ou da url indicada ao rodar o artisan serve:</p>
             <p><a href="http://localhost:8000">http://localhost:8000</a></p>
         </li>
     </ol>
