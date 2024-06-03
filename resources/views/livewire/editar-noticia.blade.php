@@ -15,7 +15,8 @@
                                 <img id="preview-image" src="{{ asset('storage/' . $noticia->image) }}" alt="{{ $noticia->title }}" class="w-full rounded-t-lg">
                             @endif
                             <div class="p-4">
-                                <form action="{{ route('editar-noticia', ['id' => $noticia->id]) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('salvar-noticia', ['id' => $noticia->id]) }}" method="post" enctype="multipart/form-data">
+
                                     @csrf
                                     <div class="mb-4">
                                         <label for="title" class="block text-sm font-medium text-gray-700">Título</label>

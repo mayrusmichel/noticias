@@ -30,6 +30,7 @@ Route::middleware([
     })->name('editar-noticia');
 
 
+    Route::post('/salvar-noticia/{id}', [EditarNoticiaController::class, 'save'])->name('salvar-noticia');
 
 
     Route::post('/publish', [PublicarController::class, 'publish'])->name('publish');
