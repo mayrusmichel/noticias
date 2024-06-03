@@ -10,7 +10,8 @@
         <li>
             <h2>Instalação de Dependências:</h2>
             <p>Execute os seguintes comandos para instalar as dependências necessárias:</p>
-            <pre><code>npm install<br>composer install</code></pre>
+            <pre><code>npm install</code></pre>
+            <pre><code>composer install</code></pre>
         </li>
         <li>
             <h2>Configuração do Arquivo .env:</h2>
@@ -28,7 +29,7 @@
         </li>
         <li>
             <h2>Acesso ao Projeto:</h2>
-            <p>Após iniciar o servidor, acesse o projeto em seu navegador através do seguinte URL ou da url indicada ao rodar o artisan serve:</p>
+            <p>Após iniciar o servidor, acesse o projeto em seu navegador através do seguinte URL:</p>
             <p><a href="http://localhost:8000">http://localhost:8000</a></p>
         </li>
     </ol>
